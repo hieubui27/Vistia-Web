@@ -13,10 +13,8 @@ const DynamicHeader = () => {
     }
     return (
         <>
-            <div className="sticky top-0">
-                {HeaderComponent && <HeaderComponent />}
-            </div>
             
+            {HeaderComponent && <HeaderComponent />}
         </>
     )
 }
