@@ -6,7 +6,7 @@ import ava from "../../../public/images/147142.png";
 
 const HomeHeader = () => {
     return (
-        <div className="relative h-[17vh] bg-black rounded-b-3xl mb-[1.5vh] shadow-[0_30px_40px_#0077FF40]">
+        <div className="sticky top-0 z-10 h-[17vh] w-full bg-black rounded-b-3xl mb-[1.5vh] shadow-[0_30px_40px_#0077FF40]">
             {/* background gradient */}
             <div className="absolute inset-0 size-full rounded-b-3xl bg-[radial-gradient(ellipse_70%_70%_at_top_center,#3D002F,rgba(255,255,255,0)),radial-gradient(ellipse_50%_100%_at_bottom_right,#39007A,rgba(255,255,255,0)),radial-gradient(ellipse_55%_55%_at_bottom_left,#00317A,rgba(255,255,255,0))]"></div>
 

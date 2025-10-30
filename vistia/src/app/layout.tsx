@@ -48,7 +48,6 @@ export default function RootLayout({
         {/* Content Area */}
         <div className="flex-1 overflow-y-auto">
           {children}
-          <MarketList />
         </div>
         {/* Bottom Navigation */}
         <BottomNav />

@@ -1,0 +1,15 @@
+.embla {
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  .embla__container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .embla__slide {
+    position: relative;
+    flex: 0 0 50%;
+  }
+  
