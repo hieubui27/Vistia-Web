@@ -25,14 +25,3 @@ body {
   color: var(--foreground);
   font-family: "Space Mono", monospace;
 }
-
-/* Thêm vào file CSS chính của bạn */
-body, #root, .AppContainer {
-  /* * Thêm padding cho tất cả các cạnh: trên, phải, dưới, trái.
-   * Quan trọng nhất là 'top'.
-   */
-  padding-top: env(safe-area-inset-top);
-  padding-left: env(safe-area-inset-left);
-  padding-right: env(safe-area-inset-right);
-  padding-bottom: env(safe-area-inset-bottom);
-}
