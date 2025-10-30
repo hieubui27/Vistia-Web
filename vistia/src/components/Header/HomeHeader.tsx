@@ -6,12 +6,12 @@ import ava from "../../../public/images/147142.png";
 
 const HomeHeader = () => {
     return (
-        <div className="sticky top-0 z-10 h-[17vh] w-full bg-black rounded-b-3xl mb-[1.5vh] shadow-[0_30px_40px_#0077FF40]">
+        <div className="sticky top-0 z-10 h-[17vh] w-full bg-black rounded-b-3xl mb-[1.5vh] shadow-[0_30px_40px_#0077FF40] p-[2vw] flex flex-col">
             {/* background gradient */}
             <div className="absolute inset-0 size-full rounded-b-3xl bg-[radial-gradient(ellipse_70%_70%_at_top_center,#3D002F,rgba(255,255,255,0)),radial-gradient(ellipse_50%_100%_at_bottom_right,#39007A,rgba(255,255,255,0)),radial-gradient(ellipse_55%_55%_at_bottom_left,#00317A,rgba(255,255,255,0))]"></div>
 
             {/* Content */}
-            <div className="content relative z-10 bg-[#fafafa15] p-[1.2vh] md:p-[1.8vh] lg:p-[2.3vh] m-[1vh] md:m-[1.3vh] mt-[2vh] md:mt-[2.7vh] rounded-3xl">
+            <div className="content relative z-10 bg-[#fafafa15] w-full box-border p-[1vh] md:p-[1.5vh] rounded-3xl mt-auto pb-[0.5vh]">
                 <div className="content__account flex gap-[1.1vh] md:gap-[1.3vh] mb-[1.2vh] md:mb-[1.7vh]">
                     <div className="content__account__avatar text-[2.15rem]">
                         <Image src={ava} alt="ava" className="h-9 w-9 rounded-full object-cover" />
