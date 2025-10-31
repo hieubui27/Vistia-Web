@@ -1,3 +1,5 @@
+import CountUp from "react-countup";
+
 const AIPredictHeader = () => {
     return (
         <>
@@ -6,7 +8,16 @@ const AIPredictHeader = () => {
                 <div className="content relative ml-auto mr-auto w-11/12 h-11/12 bg-[#000000]/30">
                     <div className="total absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center flex flex-col justify-center items-center w-28 h-28 rounded-full border-[#BFBFBF] border z-20">
                         <h2 className="text-[11px] font-bold mb-2">Total Trades</h2>
-                        <p className="text-[18px] font-bold">19324</p>
+                       
+                        <p className="text-[18px] font-bold">
+                        <CountUp
+                            end={19345}
+                            start={0}
+                            duration={2.5}
+                            separator=",">
+
+                        </CountUp>
+                        </p>
                     </div>
                     <svg
                         width="100%"
@@ -31,19 +42,59 @@ const AIPredictHeader = () => {
 
                         <div className="detail__lost flex flex-col items-center justify-center">
                             <h3 className="text-[8px] text-white font-light">Loss Rate</h3>
-                            <p className="font-medium text-[#FC454A]">40.00%</p>
+                            <p className="font-medium text-[#FC454A]">
+                            <CountUp
+                            end={40}
+                            start={0}
+                            duration={2.5}
+                            decimals="2"
+                            suffix="%"
+                            >
+
+                        </CountUp>
+                            </p>
                         </div>
                         <div className="detail__lost flex flex-col items-center justify-center">
                             <h3 className="text-[8px] text-white font-light">Win Rate</h3>
-                            <p className="font-bold text-[#01B792]">60.00%</p>
+                            <p className="font-bold text-[#01B792]">
+                            <CountUp
+                            end={60}
+                            start={0}
+                            duration={2.5}
+                            decimals="2"
+                            suffix="%"
+                            >
+
+                        </CountUp>
+                            </p>
                         </div>
                         <div className="detail__lost flex flex-col items-center justify-center">
                             <h3 className="text-[8px] text-white font-light">Highest Loss</h3>
-                            <p className="font-bold text-[#22C0FF]">6.02%</p>
+                            <p className="font-bold text-[#22C0FF]">
+                            <CountUp
+                            end={6.02}
+                            start={0}
+                            duration={2.5}
+                            decimals="2"
+                            suffix="%"
+                            >
+
+                        </CountUp>
+                            </p>
                         </div>
                         <div className="detail__lost flex flex-col items-center justify-center">
                             <h3 className="text-[8px] text-white font-light">Lowest Win</h3>
-                            <p className="font-bold text-[#22C0FF]">7.07%</p>
+                            <p className="font-bold text-[#22C0FF]">
+                            <CountUp
+                            end={7.07}
+                            start={0}
+                            duration={2.5}
+                            decimals="2"
+                            suffix="%"
+                            >
+
+                        </CountUp>
+                            </p>
                         </div>
                     </div>
                 </div>

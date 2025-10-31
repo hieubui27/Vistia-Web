@@ -5,7 +5,6 @@ import { Geist, Geist_Mono, Space_Mono } from "next/font/google";
 import "./globals.css";
 import DynamicHeader from "../components/Header/DynamicHeader";
 import BottomNav from "../components/BottomNav/BottomNav";
-import MarketList from "../components/MarketList/MarketList";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -46,7 +45,7 @@ export default function RootLayout({
         {/* Dynamic Header */}
         <DynamicHeader />
         {/* Content Area */}
-        <div className="flex-1 overflow-y-auto">
+        <div className="flex-1 overflow-y-auto relative">
           {children}
         </div>
         {/* Bottom Navigation */}
