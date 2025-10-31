@@ -1,7 +1,9 @@
-export default function ai() {
+function AIPredict() {
   return (
     <>
       Home Page
     </>
   );
 }
+
+export default AIPredict;
