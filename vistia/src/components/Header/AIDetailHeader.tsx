@@ -5,7 +5,7 @@ import Image from "next/image";
 import CometIcon from "../PredictList/cometIcon";
 const data = ai_data;
 
-const AIDetailHeader = () =>{
+const AIDetailHeader = () => {
     const params = useParams();
     const id = Array.isArray(params.id) ? params.id[0] : params.id;
     const itemData = data.find(item => item.id === id);
@@ -13,7 +13,7 @@ const AIDetailHeader = () =>{
     return (
         <>
             <div className="container relative w-full h-full bg-[url(/images/backgroundAI.png)] bg-no-repeat bg-cover bg-center pt-4">
-                <div className="content relative ml-auto mr-auto w-11/12 h-11/12 bg-[#000000]/30">  
+                <div className="content relative ml-auto mr-auto w-11/12 h-11/12 bg-[#000000]/30">
                     <svg
                         width="100%"
                         height="100%"
@@ -33,15 +33,17 @@ const AIDetailHeader = () =>{
                             vectorEffect="non-scaling-stroke"
                         />
                     </svg>
-                    
+
                     <div className="Primary pt-4 mb-2 flex justify-center items-center gap-2">
                         <div className="image">
-                            <Image
-                                src={itemData?.iconUrl}
-                                alt={itemData?.name}
-                                width={50}
-                                height={50}
-                                ></Image>
+                            {itemData?.iconUrl && (
+                                <Image
+                                    src={itemData.iconUrl}
+                                    alt={itemData?.name ?? "Unknown coin"}
+                                    width={50}
+                                    height={50}
+                                />
+                            )}
                         </div>
                         <div className="pair">
                             <h2>{itemData?.name}/USDT</h2>
@@ -54,22 +56,22 @@ const AIDetailHeader = () =>{
                             <p>{itemData?.currentPrice}</p>
                         </div>
                         <div className="col-span-1">
-                        {itemData?.changePercentage > 0 ? (
-                            <CometIcon color="#00FFAE" />
-                        ) : (
-                            <CometIcon color="#FF454B" />
-                        )}
-                    
+                            {itemData?.changePercentage > 0 ? (
+                                <CometIcon color="#00FFAE" />
+                            ) : (
+                                <CometIcon color="#FF454B" />
+                            )}
+
                         </div>
                         <div className="col-span-2 text-center">
                             <p className="text-[8px] mb-2">Predicted Price</p>
                             <p className={`${itemData?.changePercentage >= 0 ? "text-[#00FFAE]" : "text-[#FF454B]"}`}>{itemData?.predictedPrice}</p>
                         </div>
                     </div>
-                    </div>
-                    
                 </div>
-            
+
+            </div>
+
         </>
     )
 }
