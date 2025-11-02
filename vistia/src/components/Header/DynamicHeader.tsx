@@ -1,22 +1,29 @@
 'use client';
 import { usePathname } from "next/navigation";
 import HomeHeader from "./HomeHeader";
-import AIPredictHeader from "./AIPredictHeader";
+import AIHomeHeader from "./AIHomeHeader";
+import AIDetailHeader from "./AIDetailHeader";
 
 const DynamicHeader = () => {
     const pathname = usePathname();
     let HeaderComponent = null;
     // tạo function render header tương ứng với pathname
-    switch (pathname) {
-        case '/':
-            HeaderComponent = HomeHeader;
-            break;
-        case '/ai':
-            HeaderComponent = AIPredictHeader;
+    if (pathname === '/ai') {
+        // Bất kỳ URL nào bắt đầu bằng /ai (bao gồm /ai và /ai/detail/123)
+        // đều sẽ do AIHomeHeader xử lý
+        HeaderComponent = AIHomeHeader;
+    
+            
+        
+    } else if(pathname.startsWith('/ai/detail')){
+        HeaderComponent = AIDetailHeader;
+    }
+    else if (pathname === '/') {
+        HeaderComponent = HomeHeader;
     }
     return (
         <>
-            <div className="sticky top-0 z-10 h-[22vh] w-full bg-black rounded-b-3xl mb-[1.5vh] shadow-[0_30px_40px_#0077FF40] p-[2vw] flex flex-col">
+            <div className="sticky top-0 z-20 h-[22vh] w-full bg-black rounded-b-3xl mb-[1.5vh] shadow-[0_30px_40px_#0077FF40] p-[2vw] flex flex-col">
             {HeaderComponent && <HeaderComponent />}
             </div>
             

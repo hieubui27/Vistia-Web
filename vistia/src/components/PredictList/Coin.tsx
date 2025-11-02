@@ -1,7 +1,10 @@
 import { IoMdArrowDropup, IoMdArrowDropdown } from "react-icons/io";
 import Image from "next/image";
+import CometIcon from "./cometIcon";
+import Link from "next/link";
 
 type PredictItemProps = {
+    id: string;
     thumbnail: string;
     change: number;
     predicted: number;
@@ -9,12 +12,12 @@ type PredictItemProps = {
     currentPrice: number;
 };
 
-const Coin = ({ thumbnail, change, predicted, name, currentPrice }: PredictItemProps) => {
-
+const Coin = ({ id, thumbnail, change, predicted, name, currentPrice }: PredictItemProps) => {
+    
     return (
         <>
 
-            <div className="item grid grid-cols-7 mt-4 pb-4 text-[11px]">
+            <Link href={`/ai/detail/${id}`} className="item grid grid-cols-7 mt-4 pb-4 text-[11px]">
                 <div className="col-span-3 flex items-center gap-3 ">
                     <div className="item__image ">
                         <Image
@@ -29,7 +32,12 @@ const Coin = ({ thumbnail, change, predicted, name, currentPrice }: PredictItemP
                         <p className=" text-white font-bold text-[13px]">${currentPrice.toLocaleString('vi-VN')}</p>
                     </div>
                 </div>
-                <div className="col-span-2 text-center">
+                <div className="col-span-2 flex items-center justify-center">
+                {change > 0 ? (
+                            <CometIcon color="#00FFAE" />
+                        ) : (
+                            <CometIcon color="#FF454B" />
+                        )}
                     
                 </div>
                 <div className="col-span-2 text-end">
@@ -48,7 +56,7 @@ const Coin = ({ thumbnail, change, predicted, name, currentPrice }: PredictItemP
                     </div>
                     <p className={` text-[13px] text-center font-medium ${change >= 0 ? "text-[#00FFAE]" : "text-[#FF454B]"}`}>${predicted.toLocaleString('vi-VN')}</p>
                 </div>
-            </div>
+            </Link>
             <div
                 className="rounded-lg p-px 
              bg-linear-to-r from-[#303030] to-[#000000]"

@@ -1,0 +1,78 @@
+[
+    {
+      "id": "wbtc",
+      "name": "WBTC",
+      "iconUrl": "https://assets.coingecko.com/coins/images/7598/large/wrapped_bitcoin_wbtc.png",
+      "currentPrice": 98295.99,
+      "predictedPrice": 98296.13,
+      "changePercentage": 0.00051,
+      "chartData": [
+        { "time": "2025-11-01T12:00:00Z", "predicted": 98220.99 },
+        { "time": "2025-11-01T13:00:00Z", "predicted": 98280.05 },
+        { "time": "2025-11-01T14:00:00Z", "predicted": 98296.10 },
+        { "time": "2025-11-01T15:00:00Z", "predicted": 98167.13 },
+        { "time": "2025-11-01T16:00:00Z", "predicted": 98445.08 }
+      ]
+    },
+    {
+      "id": "weth",
+      "name": "WETH",
+      "iconUrl": "https://assets.coingecko.com/coins/images/2518/large/weth.png",
+      "currentPrice": 3884.48,
+      "predictedPrice": 3782.21,
+      "changePercentage": -0.00092,
+      "chartData": [
+        { "time": "2025-11-01T12:00:00Z", "predicted": 3884.48 },
+        { "time": "2025-11-01T13:00:00Z", "predicted": 3842.10 },
+        { "time": "2025-11-01T14:00:00Z", "predicted": 3810.32 },
+        { "time": "2025-11-01T15:00:00Z", "predicted": 3782.21 },
+        { "time": "2025-11-01T16:00:00Z", "predicted": 3795.02 }
+      ]
+    },
+    {
+      "id": "xcdot",
+      "name": "xcDOT",
+      "iconUrl": "https://assets.coingecko.com/coins/images/12171/large/polkadot.png",
+      "currentPrice": 7.4295,
+      "predictedPrice": 7.4317,
+      "changePercentage": 0.01142,
+      "chartData": [
+        { "time": "2025-11-01T12:00:00Z", "predicted": 7.4295 },
+        { "time": "2025-11-01T13:00:00Z", "predicted": 7.4302 },
+        { "time": "2025-11-01T14:00:00Z", "predicted": 7.4310 },
+        { "time": "2025-11-01T15:00:00Z", "predicted": 7.4317 },
+        { "time": "2025-11-01T16:00:00Z", "predicted": 7.4320 }
+      ]
+    },
+    {
+      "id": "frax",
+      "name": "FRAX",
+      "iconUrl": "https://assets.coingecko.com/coins/images/13422/large/frax_logo.png",
+      "currentPrice": 236.06,
+      "predictedPrice": 237.19,
+      "changePercentage": 0.00318,
+      "chartData": [
+        { "time": "2025-11-01T12:00:00Z", "predicted": 236.06 },
+        { "time": "2025-11-01T13:00:00Z", "predicted": 236.54 },
+        { "time": "2025-11-01T14:00:00Z", "predicted": 237.02 },
+        { "time": "2025-11-01T15:00:00Z", "predicted": 237.19 },
+        { "time": "2025-11-01T16:00:00Z", "predicted": 237.10 }
+      ]
+    },
+    {
+      "id": "wglmr",
+      "name": "WGLMR",
+      "iconUrl": "https://assets.coingecko.com/coins/images/22459/large/glmr.png",
+      "currentPrice": 0.2658,
+      "predictedPrice": 0.41275,
+      "changePercentage": -0.01235,
+      "chartData": [
+        { "time": "2025-11-01T12:00:00Z", "predicted": 0.2658 },
+        { "time": "2025-11-01T13:00:00Z", "predicted": 0.3124 },
+        { "time": "2025-11-01T14:00:00Z", "predicted": 0.3628 },
+        { "time": "2025-11-01T15:00:00Z", "predicted": 0.41275 },
+        { "time": "2025-11-01T16:00:00Z", "predicted": 0.3981 }
+      ]
+    }
+  ]
+  
