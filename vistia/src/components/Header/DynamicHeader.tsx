@@ -1,8 +1,11 @@
 'use client';
 import { usePathname } from "next/navigation";
 import HomeHeader from "./HomeHeader";
+
 import AIHomeHeader from "./AIHomeHeader";
 import AIDetailHeader from "./AIDetailHeader";
+import ChatbotHeader from "./ChatbotHeader";
+
 
 const DynamicHeader = () => {
     const pathname = usePathname();
@@ -12,14 +15,16 @@ const DynamicHeader = () => {
         // Bất kỳ URL nào bắt đầu bằng /ai (bao gồm /ai và /ai/detail/123)
         // đều sẽ do AIHomeHeader xử lý
         HeaderComponent = AIHomeHeader;
-    
-            
-        
+
     } else if(pathname.startsWith('/ai/detail')){
         HeaderComponent = AIDetailHeader;
     }
+    else if(pathname === '/chatbot'){
+        HeaderComponent = ChatbotHeader;
+    }
     else if (pathname === '/') {
         HeaderComponent = HomeHeader;
+
     }
     return (
         <>
