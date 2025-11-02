@@ -1,6 +1,6 @@
 import { IoMdArrowDropup, IoMdArrowDropdown } from "react-icons/io";
 import Image from "next/image";
-import CometIcon from "./cometIcon";
+
 import Link from "next/link";
 
 type PredictItemProps = {
