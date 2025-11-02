@@ -2,7 +2,6 @@
 import { useParams } from "next/navigation";
 import ai_data from "../../../public/mock/ai_data.json";
 import Image from "next/image";
-import CometIcon from "../PredictList/cometIcon";
 const data = ai_data;
 
 const AIDetailHeader = () => {
@@ -56,9 +55,17 @@ const AIDetailHeader = () => {
                         </div>
                         <div className="col-span-1">
                             {(itemData?.changePercentage ?? 0) > 0 ? (
-                                <CometIcon color="#00FFAE" />
+                                <Image  
+                                src="/images/AIPredict/Arrow.png"
+                                alt="increase"
+                                width={50}
+                                height={50}/>
                             ) : (
-                                <CometIcon color="#FF454B" />
+                                <Image  
+                                src="/images/AIPredict/Arrow (1).png"
+                                alt="decrease"
+                                width={50}
+                                height={50}/>
                             )}
 
                         </div>
