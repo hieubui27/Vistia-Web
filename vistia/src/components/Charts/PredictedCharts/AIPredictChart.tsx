@@ -3,15 +3,13 @@
 import { useMemo } from 'react';
 import * as echarts from 'echarts';
 import BaseLineChart from './LineCharts';
-// 1. Import component BaseLineChart mới
-; // <-- Điều chỉnh đường dẫn nếu cần
+import PredictedPieChart from './PieChart';
 
 type ChartEntry = {
   time: string;
   predicted: number;
 };
 
-// Hàm này không đổi
 const formatTime = (timeString: string) => {
   const date = new Date(timeString);
   return date.toLocaleTimeString('vi-VN', {
@@ -22,12 +20,10 @@ const formatTime = (timeString: string) => {
 };
 
 const AIPredictChart = ({ data }: { data: ChartEntry[] }) => {
-  
+
   const option = useMemo(() => {
     const xData = data.map(item => formatTime(item.time));
     const yData = data.map(item => item.predicted);
-
-
     return {
       tooltip: {
         trigger: 'axis'
@@ -53,7 +49,7 @@ const AIPredictChart = ({ data }: { data: ChartEntry[] }) => {
         axisLine: { show: false },
         axisTick: { show: false },
         splitLine: { 
-          show: false, // Bạn đang để false, nếu muốn hiện lưới thì đổi thành true
+          show: false,
           lineStyle: {
             color: '#4A4A4A',
             width: 1,
@@ -85,11 +81,17 @@ const AIPredictChart = ({ data }: { data: ChartEntry[] }) => {
   }, [data]); 
 
 
+
   
   return (
-    <div className="relative mt-6 ml-auto mr-auto z-10 w-10/12 h-fit p-4 border border-[#3C3A3A] bg-black/20 rounded-2xl">
+    <div className="relative mt-6 ml-auto mr-auto z-10 w-10/12 h-fit p-4 gradient-border border-[#3C3A3A] bg-linear-to-b  from-black/20 to-black rounded-2xl">
         <h2 className="text-gray-300 text-sm mb-2 pb-2 border-b border-gray-400">Cryptocurrency</h2>
         <BaseLineChart option={option} className="h-64" />
+        <PredictedPieChart 
+        totalTrades={6355}
+        winRate={59.31}
+        highestGain={3.92}
+        highestLoss={11.38}/>
     </div>
   );
 };
