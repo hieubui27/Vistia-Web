@@ -1,7 +1,9 @@
+import ChatWindow from "@/src/components/ChatWindow/ChatWindow";
+
 export default function chatbot() {
   return (
-    <>
-      Home Page
-    </>
+    <div className="Chatbot">
+      <ChatWindow/>
+    </div>
   );
 }
