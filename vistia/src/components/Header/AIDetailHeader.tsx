@@ -56,7 +56,7 @@ const AIDetailHeader = () => {
                             <p>{itemData?.currentPrice}</p>
                         </div>
                         <div className="col-span-1">
-                            {itemData?.changePercentage > 0 ? (
+                            {(itemData?.changePercentage ?? 0) > 0 ? (
                                 <CometIcon color="#00FFAE" />
                             ) : (
                                 <CometIcon color="#FF454B" />
@@ -65,7 +65,7 @@ const AIDetailHeader = () => {
                         </div>
                         <div className="col-span-2 text-center">
                             <p className="text-[8px] mb-2">Predicted Price</p>
-                            <p className={`${itemData?.changePercentage >= 0 ? "text-[#00FFAE]" : "text-[#FF454B]"}`}>{itemData?.predictedPrice}</p>
+                            <p className={`${(itemData?.changePercentage ?? 0) >= 0 ? "text-[#00FFAE]" : "text-[#FF454B]"}`}>{itemData?.predictedPrice}</p>
                         </div>
                     </div>
                 </div>
