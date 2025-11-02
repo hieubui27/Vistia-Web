@@ -9,7 +9,6 @@ const AIDetailHeader = () => {
     const params = useParams();
     const id = Array.isArray(params.id) ? params.id[0] : params.id;
     const itemData = data.find(item => item.id === id);
-    console.log(itemData);
     return (
         <>
             <div className="container relative w-full h-full bg-[url(/images/backgroundAI.png)] bg-no-repeat bg-cover bg-center pt-4">

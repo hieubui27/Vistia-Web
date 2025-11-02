@@ -1,13 +1,10 @@
 'use client'
-import { usePathname } from "next/navigation";
 import AIPredictHeader from "./AIPredictHeader"
 
 
 
 
 const AIHomeHeader = () => {
-    const pathname= usePathname();
-    console.log(pathname);
     const AIHeader = AIPredictHeader;
 
     return (
