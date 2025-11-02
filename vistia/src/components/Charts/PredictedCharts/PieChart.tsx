@@ -100,7 +100,7 @@ const PredictedPieChart = ({
   }, [option]);
 
   return (
-    <div className="flex w-ful">
+    <div className="flex w-full mt-8">
       <div className="w-5/12">
         <div ref={chartRef} className="h-40 w-40" />
       </div>

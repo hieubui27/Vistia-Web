@@ -80,11 +80,8 @@ const AIPredictChart = ({ data }: { data: ChartEntry[] }) => {
 
   }, [data]); 
 
-
-
-  
   return (
-    <div className="relative mt-6 ml-auto mr-auto z-10 w-10/12 h-fit p-4 gradient-border border-[#3C3A3A] bg-linear-to-b  from-black/20 to-black rounded-2xl">
+    <div className="relative mt-6 ml-auto mr-auto z-10 w-10/12 h-fit p-4 gradient-border border-[#3C3A3A] bg-linear-to-b  from-black/5 to-black rounded-2xl">
         <h2 className="text-gray-300 text-sm mb-2 pb-2 border-b border-gray-400">Cryptocurrency</h2>
         <BaseLineChart option={option} className="h-64" />
         <PredictedPieChart 
