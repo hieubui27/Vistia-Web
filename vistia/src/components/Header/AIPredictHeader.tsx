@@ -24,7 +24,7 @@ const AIPredictHeader = () => {
                             end={40}
                             start={0}
                             duration={2.5}
-                            decimals="2"
+                            decimals={2}
                             suffix="%"
                             >
 
@@ -38,7 +38,7 @@ const AIPredictHeader = () => {
                             end={60}
                             start={0}
                             duration={2.5}
-                            decimals="2"
+                            decimals={2}
                             suffix="%"
                             >
 
@@ -52,7 +52,7 @@ const AIPredictHeader = () => {
                             end={6.02}
                             start={0}
                             duration={2.5}
-                            decimals="2"
+                            decimals={2}
                             suffix="%"
                             >
 
@@ -66,7 +66,7 @@ const AIPredictHeader = () => {
                             end={7.07}
                             start={0}
                             duration={2.5}
-                            decimals="2"
+                            decimals={2}
                             suffix="%"
                             >
 
