@@ -9,7 +9,7 @@ const AIHomeHeader = () => {
 
     return (
         <>
-        <div className="container relative w-full h-full bg-[url(/images/backgroundAI.png)] bg-no-repeat bg-cover bg-center pt-4">
+        <div className="container relative w-full h-full bg-[url(/images/AIPredict/image.png)] bg-no-repeat bg-cover bg-center pt-4">
                 <div className="content relative ml-auto mr-auto w-11/12 h-11/12 bg-[#000000]/30">  
                     <svg
                         width="100%"

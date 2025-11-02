@@ -34,9 +34,17 @@ const Coin = ({ id, thumbnail, change, predicted, name, currentPrice }: PredictI
                 </div>
                 <div className="col-span-2 flex items-center justify-center">
                 {change > 0 ? (
-                            <CometIcon color="#00FFAE" />
+                            <Image  
+                                src="/images/AIPredict/Arrow.png"
+                                alt="increase"
+                                width={50}
+                                height={50}/>
                         ) : (
-                            <CometIcon color="#FF454B" />
+                            <Image  
+                            src="/images/AIPredict/Arrow (1).png"
+                            alt="decrease"
+                            width={50}
+                            height={50}/>
                         )}
                     
                 </div>

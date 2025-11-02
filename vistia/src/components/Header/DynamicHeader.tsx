@@ -23,7 +23,7 @@ const DynamicHeader = () => {
     }
     return (
         <>
-            <div className="sticky top-0 z-20 h-[22vh] w-full bg-black rounded-b-3xl mb-[1.5vh] shadow-[0_30px_40px_#0077FF40]  flex flex-col">
+            <div className="sticky top-0 z-20 h-[22vh] w-full bg-black rounded-b-3xl overflow-hidden shadow-[0_30px_40px_#0077FF40]  flex flex-col">
             {HeaderComponent && <HeaderComponent />}
             </div>
             
