@@ -33,7 +33,7 @@ export default function ChatWindow() {
     <div
       className="flex flex-col flex-grow w-full min-h-screen px-4 pt-30 pb-35 space-y-3"
       style={{
-        backgroundImage: "url('/chatbot/bg.png'), url('/chatbot/bg-star.png')",
+        backgroundImage: "url('/bg.png'), url('/chatbot/bg-star.png')",
         backgroundSize: "cover, contain",
         backgroundPosition: "center, top",
         backgroundRepeat: "no-repeat, no-repeat",
