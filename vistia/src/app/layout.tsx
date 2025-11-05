@@ -45,7 +45,7 @@ export default function RootLayout({
         {/* Dynamic Header */}
         <DynamicHeader />
         {/* Content Area */}
-        <div className="flex-1 overflow-y-auto relative pt-4">
+        <div className="flex-1 overflow-y-auto relative">
           {children}
         </div>
         {/* Bottom Navigation */}
