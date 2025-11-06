@@ -7,7 +7,8 @@ import PredictedPieChart from './PieChart';
 
 type ChartEntry = {
   time: string;
-  predicted: number;
+  actualPrice: number;
+  predicted: number | null;
 };
 
 const formatTime = (timeString: string) => {
@@ -23,7 +24,23 @@ const AIPredictChart = ({ data }: { data: ChartEntry[] }) => {
 
   const option = useMemo(() => {
     const xData = data.map(item => formatTime(item.time));
-    const yData = data.map(item => item.predicted);
+    const actualData = data.map(item => item.actualPrice);
+
+
+    const predictedData = data.map((item, index) => {
+      if (item.predicted === null || item.predicted === undefined) {
+        return null;
+      }
+      const basePrice = index === 0 ? item.actualPrice : data[index - 1].actualPrice;
+      const color = item.predicted >= basePrice ? '#00D09C' : '#EF4444';
+      return {
+        value: item.predicted,
+        itemStyle: {
+          color: color
+        }
+      };
+    });
+
     return {
       tooltip: {
         trigger: 'axis'
@@ -48,7 +65,7 @@ const AIPredictChart = ({ data }: { data: ChartEntry[] }) => {
         position: 'right',
         axisLine: { show: false },
         axisTick: { show: false },
-        splitLine: { 
+        splitLine: {
           show: false,
           lineStyle: {
             color: '#4A4A4A',
@@ -68,27 +85,34 @@ const AIPredictChart = ({ data }: { data: ChartEntry[] }) => {
       },
       series: [
         {
-          name: 'Predicted',
+          name: 'Actual Price',
           type: 'line',
-          data: yData,
+          data: actualData,
           smooth: false,
           showSymbol: false,
-          color: '#3B82F6' 
+          color: '#3B82F6'
+        },
+        {
+          name: 'Predicted',
+          type: 'scatter',
+          data: predictedData,
+          symbolSize: 8,
+          zlevel: 2
         }
       ]
     } as echarts.EChartsOption;
 
-  }, [data]); 
+  }, [data]);
 
   return (
     <div className="relative mt-6 ml-auto mr-auto z-10 w-10/12 h-fit p-4 gradient-border border-[#3C3A3A] bg-linear-to-b  from-black/5 to-black rounded-2xl">
-        <h2 className="text-gray-300 text-sm mb-2 pb-2 border-b border-gray-400">Cryptocurrency</h2>
-        <BaseLineChart option={option} className="h-64" />
-        <PredictedPieChart 
+      <h2 className="text-gray-300 text-sm mb-2 pb-2 border-b border-gray-400">Cryptocurrency</h2>
+      <BaseLineChart option={option} className="h-64" />
+      <PredictedPieChart
         totalTrades={6355}
         winRate={59.31}
         highestGain={3.92}
-        highestLoss={11.38}/>
+        highestLoss={11.38} />
     </div>
   );
 };

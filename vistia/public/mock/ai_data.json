@@ -1,78 +1,290 @@
 [
-    {
-      "id": "wbtc",
-      "name": "WBTC",
-      "iconUrl": "https://assets.coingecko.com/coins/images/7598/large/wrapped_bitcoin_wbtc.png",
-      "currentPrice": 98295.99,
-      "predictedPrice": 98296.13,
-      "changePercentage": 0.00051,
-      "chartData": [
-        { "time": "2025-11-01T12:00:00Z", "predicted": 98220.99 },
-        { "time": "2025-11-01T13:00:00Z", "predicted": 98280.05 },
-        { "time": "2025-11-01T14:00:00Z", "predicted": 98296.10 },
-        { "time": "2025-11-01T15:00:00Z", "predicted": 98167.13 },
-        { "time": "2025-11-01T16:00:00Z", "predicted": 98445.08 }
-      ]
-    },
-    {
-      "id": "weth",
-      "name": "WETH",
-      "iconUrl": "https://assets.coingecko.com/coins/images/2518/large/weth.png",
-      "currentPrice": 3884.48,
-      "predictedPrice": 3782.21,
-      "changePercentage": -0.00092,
-      "chartData": [
-        { "time": "2025-11-01T12:00:00Z", "predicted": 3884.48 },
-        { "time": "2025-11-01T13:00:00Z", "predicted": 3842.10 },
-        { "time": "2025-11-01T14:00:00Z", "predicted": 3810.32 },
-        { "time": "2025-11-01T15:00:00Z", "predicted": 3782.21 },
-        { "time": "2025-11-01T16:00:00Z", "predicted": 3795.02 }
-      ]
-    },
-    {
-      "id": "xcdot",
-      "name": "xcDOT",
-      "iconUrl": "https://assets.coingecko.com/coins/images/12171/large/polkadot.png",
-      "currentPrice": 7.4295,
-      "predictedPrice": 7.4317,
-      "changePercentage": 0.01142,
-      "chartData": [
-        { "time": "2025-11-01T12:00:00Z", "predicted": 7.4295 },
-        { "time": "2025-11-01T13:00:00Z", "predicted": 7.4302 },
-        { "time": "2025-11-01T14:00:00Z", "predicted": 7.4310 },
-        { "time": "2025-11-01T15:00:00Z", "predicted": 7.4317 },
-        { "time": "2025-11-01T16:00:00Z", "predicted": 7.4320 }
-      ]
-    },
-    {
-      "id": "frax",
-      "name": "FRAX",
-      "iconUrl": "https://assets.coingecko.com/coins/images/13422/large/frax_logo.png",
-      "currentPrice": 236.06,
-      "predictedPrice": 237.19,
-      "changePercentage": 0.00318,
-      "chartData": [
-        { "time": "2025-11-01T12:00:00Z", "predicted": 236.06 },
-        { "time": "2025-11-01T13:00:00Z", "predicted": 236.54 },
-        { "time": "2025-11-01T14:00:00Z", "predicted": 237.02 },
-        { "time": "2025-11-01T15:00:00Z", "predicted": 237.19 },
-        { "time": "2025-11-01T16:00:00Z", "predicted": 237.10 }
-      ]
-    },
-    {
-      "id": "wglmr",
-      "name": "WGLMR",
-      "iconUrl": "https://assets.coingecko.com/coins/images/22459/large/glmr.png",
-      "currentPrice": 0.2658,
-      "predictedPrice": 0.41275,
-      "changePercentage": -0.01235,
-      "chartData": [
-        { "time": "2025-11-01T12:00:00Z", "predicted": 0.2658 },
-        { "time": "2025-11-01T13:00:00Z", "predicted": 0.3124 },
-        { "time": "2025-11-01T14:00:00Z", "predicted": 0.3628 },
-        { "time": "2025-11-01T15:00:00Z", "predicted": 0.41275 },
-        { "time": "2025-11-01T16:00:00Z", "predicted": 0.3981 }
-      ]
-    }
-  ]
-  
+  {
+    "id": "wbtc",
+    "name": "WBTC",
+    "iconUrl": "https://assets.coingecko.com/coins/images/7598/large/wrapped_bitcoin_wbtc.png",
+    "currentPrice": 98295.99,
+    "predictedPrice": 98296.13,
+    "changePercentage": 0.00051,
+    "chartData": [
+      { "time": "10:00", "actualPrice": 98150.20, "predicted": null },
+      { "time": "11:00", "actualPrice": 98190.00, "predicted": 98215.12 },
+      { "time": "12:00", "actualPrice": 98210.50, "predicted": 98278.42 },
+      { "time": "13:00", "actualPrice": 98275.00, "predicted": null },
+      { "time": "14:00", "actualPrice": 98296.10, "predicted": 98298.00 },
+      { "time": "15:00", "actualPrice": 98160.00, "predicted": 98150.13 },
+      { "time": "16:00", "actualPrice": 98440.00, "predicted": 98445.88 },
+      { "time": "17:00", "actualPrice": 98395.50, "predicted": null }
+    ]
+  },
+  {
+    "id": "weth",
+    "name": "WETH",
+    "iconUrl": "https://assets.coingecko.com/coins/images/2518/large/weth.png",
+    "currentPrice": 3884.48,
+    "predictedPrice": 3782.21,
+    "changePercentage": -0.00092,
+    "chartData": [
+      { "time": "10:00", "actualPrice": 3890.10, "predicted": null },
+      { "time": "11:00", "actualPrice": 3888.20, "predicted": 3895.50 },
+      { "time": "12:00", "actualPrice": 3884.48, "predicted": 3870.10 },
+      { "time": "13:00", "actualPrice": 3840.00, "predicted": null },
+      { "time": "14:00", "actualPrice": 3812.32, "predicted": 3825.00 },
+      { "time": "15:00", "actualPrice": 3780.00, "predicted": 3765.80 },
+      { "time": "16:00", "actualPrice": 3790.00, "predicted": 3801.20 },
+      { "time": "17:00", "actualPrice": 3785.60, "predicted": null }
+    ]
+  },
+  {
+    "id": "xcdot",
+    "name": "xcDOT",
+    "iconUrl": "https://assets.coingecko.com/coins/images/12171/large/polkadot.png",
+    "currentPrice": 7.4295,
+    "predictedPrice": 7.4317,
+    "changePercentage": 0.01142,
+    "chartData": [
+      { "time": "10:00", "actualPrice": 7.4280, "predicted": null },
+      { "time": "11:00", "actualPrice": 7.4290, "predicted": 7.4350 },
+      { "time": "12:00", "actualPrice": 7.4295, "predicted": 7.4250 },
+      { "time": "13:00", "actualPrice": 7.4300, "predicted": null },
+      { "time": "14:00", "actualPrice": 7.4308, "predicted": 7.4380 },
+      { "time": "15:00", "actualPrice": 7.4315, "predicted": 7.4210 },
+      { "time": "16:00", "actualPrice": 7.4318, "predicted": 7.4400 },
+      { "time": "17:00", "actualPrice": 7.4320, "predicted": null }
+    ]
+  },
+  {
+    "id": "frax",
+    "name": "FRAX",
+    "iconUrl": "https://assets.coingecko.com/coins/images/13422/large/frax_logo.png",
+    "currentPrice": 236.06,
+    "predictedPrice": 237.19,
+    "changePercentage": 0.00318,
+    "chartData": [
+      { "time": "10:00", "actualPrice": 235.90, "predicted": null },
+      { "time": "11:00", "actualPrice": 236.00, "predicted": 236.80 },
+      { "time": "12:00", "actualPrice": 236.06, "predicted": 235.50 },
+      { "time": "13:00", "actualPrice": 236.50, "predicted": null },
+      { "time": "14:00", "actualPrice": 237.00, "predicted": 237.90 },
+      { "time": "15:00", "actualPrice": 237.15, "predicted": 236.50 },
+      { "time": "16:00", "actualPrice": 237.05, "predicted": 237.85 },
+      { "time": "17:00", "actualPrice": 237.10, "predicted": null }
+    ]
+  },
+  {
+    "id": "wglmr",
+    "name": "WGLMR",
+    "iconUrl": "https://assets.coingecko.com/coins/images/22459/large/glmr.png",
+    "currentPrice": 0.2658,
+    "predictedPrice": 0.41275,
+    "changePercentage": -0.01235,
+    "chartData": [
+      { "time": "10:00", "actualPrice": 0.2600, "predicted": null },
+      { "time": "11:00", "actualPrice": 0.2650, "predicted": 0.2750 },
+      { "time": "12:00", "actualPrice": 0.2658, "predicted": 0.2550 },
+      { "time": "13:00", "actualPrice": 0.3100, "predicted": null },
+      { "time": "14:00", "actualPrice": 0.3600, "predicted": 0.3780 },
+      { "time": "15:00", "actualPrice": 0.4100, "predicted": 0.3950 },
+      { "time": "16:00", "actualPrice": 0.3950, "predicted": 0.4150 },
+      { "time": "17:00", "actualPrice": 0.3900, "predicted": null }
+    ]
+  },
+  {
+    "id": "usdc",
+    "name": "USDC",
+    "iconUrl": "https://assets.coingecko.com/coins/images/6319/large/USD_Coin_icon.png",
+    "currentPrice": 1.0002,
+    "predictedPrice": 1.0005,
+    "changePercentage": 0.00003,
+    "chartData": [
+      { "time": "10:00", "actualPrice": 1.0001, "predicted": null },
+      { "time": "11:00", "actualPrice": 1.0003, "predicted": 1.0015 },
+      { "time": "12:00", "actualPrice": 1.0002, "predicted": 0.9995 },
+      { "time": "13:00", "actualPrice": 1.0004, "predicted": null },
+      { "time": "14:00", "actualPrice": 1.0003, "predicted": 1.0018 },
+      { "time": "15:00", "actualPrice": 1.0001, "predicted": 0.9990 },
+      { "time": "16:00", "actualPrice": 1.0003, "predicted": 1.0010 },
+      { "time": "17:00", "actualPrice": 1.0002, "predicted": null }
+    ]
+  },
+  {
+    "id": "bnb",
+    "name": "BNB",
+    "iconUrl": "https://assets.coingecko.com/coins/images/825/large/binance-coin-logo.png",
+    "currentPrice": 623.55,
+    "predictedPrice": 628.11,
+    "changePercentage": 0.00734,
+    "chartData": [
+      { "time": "10:00", "actualPrice": 618.50, "predicted": null },
+      { "time": "11:00", "actualPrice": 618.80, "predicted": 622.00 },
+      { "time": "12:00", "actualPrice": 619.00, "predicted": 615.50 },
+      { "time": "13:00", "actualPrice": 621.50, "predicted": null },
+      { "time": "14:00", "actualPrice": 625.00, "predicted": 629.50 },
+      { "time": "15:00", "actualPrice": 627.50, "predicted": 624.00 },
+      { "time": "16:00", "actualPrice": 626.80, "predicted": 630.00 },
+      { "time": "17:00", "actualPrice": 627.00, "predicted": null }
+    ]
+  },
+  {
+    "id": "avax",
+    "name": "Avalanche",
+    "iconUrl": "https://assets.coingecko.com/coins/images/12559/large/coin-round-red.png",
+    "currentPrice": 41.28,
+    "predictedPrice": 42.13,
+    "changePercentage": 0.02117,
+    "chartData": [
+      { "time": "10:00", "actualPrice": 40.80, "predicted": null },
+      { "time": "11:00", "actualPrice": 40.90, "predicted": 41.50 },
+      { "time": "12:00", "actualPrice": 41.00, "predicted": 40.50 },
+      { "time": "13:00", "actualPrice": 41.25, "predicted": null },
+      { "time": "14:00", "actualPrice": 41.40, "predicted": 42.10 },
+      { "time": "15:00", "actualPrice": 42.00, "predicted": 41.70 },
+      { "time": "16:00", "actualPrice": 41.95, "predicted": 42.50 },
+      { "time": "17:00", "actualPrice": 42.10, "predicted": null }
+    ]
+  },
+  {
+    "id": "matic",
+    "name": "Polygon (MATIC)",
+    "iconUrl": "https://assets.coingecko.com/coins/images/4713/large/polygon.png",
+    "currentPrice": 0.742,
+    "predictedPrice": 0.749,
+    "changePercentage": 0.0091,
+    "chartData": [
+      { "time": "10:00", "actualPrice": 0.735, "predicted": null },
+      { "time": "11:00", "actualPrice": 0.737, "predicted": 0.745 },
+      { "time": "12:00", "actualPrice": 0.738, "predicted": 0.730 },
+      { "time": "13:00", "actualPrice": 0.740, "predicted": null },
+      { "time": "14:00", "actualPrice": 0.744, "predicted": 0.752 },
+      { "time": "15:00", "actualPrice": 0.748, "predicted": 0.741 },
+      { "time": "16:00", "actualPrice": 0.746, "predicted": 0.755 },
+      { "time": "17:00", "actualPrice": 0.745, "predicted": null }
+    ]
+  },
+  {
+    "id": "ada",
+    "name": "Cardano (ADA)",
+    "iconUrl": "https://assets.coingecko.com/coins/images/975/large/cardano.png",
+    "currentPrice": 0.5231,
+    "predictedPrice": 0.5278,
+    "changePercentage": 0.0056,
+    "chartData": [
+      { "time": "10:00", "actualPrice": 0.519, "predicted": null },
+      { "time": "11:00", "actualPrice": 0.520, "predicted": 0.528 },
+      { "time": "12:00", "actualPrice": 0.521, "predicted": 0.515 },
+      { "time": "13:00", "actualPrice": 0.522, "predicted": null },
+      { "time": "14:00", "actualPrice": 0.525, "predicted": 0.531 },
+      { "time": "15:00", "actualPrice": 0.527, "predicted": 0.520 },
+      { "time": "16:00", "actualPrice": 0.526, "predicted": 0.533 },
+      { "time": "17:00", "actualPrice": 0.528, "predicted": null }
+    ]
+  },
+  {
+    "id": "dot",
+    "name": "Polkadot",
+    "iconUrl": "https://assets.coingecko.com/coins/images/12171/large/polkadot.png",
+    "currentPrice": 7.31,
+    "predictedPrice": 7.45,
+    "changePercentage": 0.0191,
+    "chartData": [
+      { "time": "10:00", "actualPrice": 7.25, "predicted": null },
+      { "time": "11:00", "actualPrice": 7.28, "predicted": 7.35 },
+      { "time": "12:00", "actualPrice": 7.29, "predicted": 7.22 },
+      { "time": "13:00", "actualPrice": 7.30, "predicted": null },
+      { "time": "14:00", "actualPrice": 7.34, "predicted": 7.42 },
+      { "time": "15:00", "actualPrice": 7.43, "predicted": 7.35 },
+      { "time": "16:00", "actualPrice": 7.40, "predicted": 7.48 },
+      { "time": "17:00", "actualPrice": 7.41, "predicted": null }
+    ]
+  },
+  {
+    "id": "doge",
+    "name": "Dogecoin",
+    "iconUrl": "https://assets.coingecko.com/coins/images/5/large/dogecoin.png",
+    "currentPrice": 0.1723,
+    "predictedPrice": 0.1741,
+    "changePercentage": 0.0103,
+    "chartData": [
+      { "time": "10:00", "actualPrice": 0.1700, "predicted": null },
+      { "time": "11:00", "actualPrice": 0.1705, "predicted": 0.1730 },
+      { "time": "12:00", "actualPrice": 0.171, "predicted": 0.1680 },
+      { "time": "13:00", "actualPrice": 0.172, "predicted": null },
+      { "time": "14:00", "actualPrice": 0.173, "predicted": 0.1755 },
+      { "time": "15:00", "actualPrice": 0.174, "predicted": 0.1720 },
+      { "time": "16:00", "actualPrice": 0.1738, "predicted": 0.1760 },
+      { "time": "17:00", "actualPrice": 0.1742, "predicted": null }
+    ]
+  },
+  {
+    "id": "sol",
+    "name": "Solana",
+    "iconUrl": "https://assets.coingecko.com/coins/images/4128/large/solana.png",
+    "currentPrice": 173.40,
+    "predictedPrice": 176.25,
+    "changePercentage": 0.0164,
+    "chartData": [
+      { "time": "10:00", "actualPrice": 171.80, "predicted": null },
+      { "time": "11:00", "actualPrice": 172.00, "predicted": 174.00 },
+      { "time": "12:00", "actualPrice": 172.50, "predicted": 170.50 },
+      { "time": "13:00", "actualPrice": 173.00, "predicted": null },
+      { "time": "14:00", "actualPrice": 174.20, "predicted": 176.80 },
+      { "time": "15:00", "actualPrice": 176.00, "predicted": 174.00 },
+      { "time": "16:00", "actualPrice": 175.40, "predicted": 177.50 },
+      { "time": "17:00", "actualPrice": 175.80, "predicted": null }
+    ]
+  },
+  {
+    "id": "tron",
+    "name": "TRON",
+    "iconUrl": "https://assets.coingecko.com/coins/images/1094/large/tron-logo.png",
+    "currentPrice": 0.1032,
+    "predictedPrice": 0.1041,
+    "changePercentage": 0.0087,
+    "chartData": [
+      { "time": "10:00", "actualPrice": 0.1025, "predicted": null },
+      { "time": "11:00", "actualPrice": 0.1027, "predicted": 0.1035 },
+      { "time": "12:00", "actualPrice": 0.1028, "predicted": 0.1020 },
+      { "time": "13:00", "actualPrice": 0.1030, "predicted": null },
+      { "time": "14:00", "actualPrice": 0.1035, "predicted": 0.1045 },
+      { "time": "15:00", "actualPrice": 0.1040, "predicted": 0.1030 },
+      { "time": "16:00", "actualPrice": 0.1039, "predicted": 0.1048 },
+      { "time": "17:00", "actualPrice": 0.1040, "predicted": null }
+    ]
+  },
+  {
+    "id": "link",
+    "name": "Chainlink",
+    "iconUrl": "https://assets.coingecko.com/coins/images/877/large/chainlink-new-logo.png",
+    "currentPrice": 16.92,
+    "predictedPrice": 17.20,
+    "changePercentage": 0.0178,
+    "chartData": [
+      { "time": "10:00", "actualPrice": 16.60, "predicted": null },
+      { "time": "11:00", "actualPrice": 16.65, "predicted": 16.90 },
+      { "time": "12:00", "actualPrice": 16.70, "predicted": 16.50 },
+      { "time": "13:00", "actualPrice": 16.80, "predicted": null },
+      { "time": "14:00", "actualPrice": 17.00, "predicted": 17.25 },
+      { "time": "15:00", "actualPrice": 17.18, "predicted": 16.95 },
+      { "time": "16:00", "actualPrice": 17.15, "predicted": 17.35 },
+      { "time": "17:00", "actualPrice": 17.20, "predicted": null }
+    ]
+  },
+  {
+    "id": "arb",
+    "name": "Arbitrum",
+    "iconUrl": "https://assets.coingecko.com/coins/images/16547/large/Arbitrum.png",
+    "currentPrice": 1.13,
+    "predictedPrice": 1.16,
+    "changePercentage": 0.0219,
+    "chartData": [
+      { "time": "10:00", "actualPrice": 1.115, "predicted": null },
+      { "time": "11:00", "actualPrice": 1.118, "predicted": 1.130 },
+      { "time": "12:00", "actualPrice": 1.12, "predicted": 1.105 },
+      { "time": "13:00", "actualPrice": 1.13, "predicted": null },
+      { "time": "14:00", "actualPrice": 1.14, "predicted": 1.155 },
+      { "time": "15:00", "actualPrice": 1.15, "predicted": 1.138 },
+      { "time": "16:00", "actualPrice": 1.148, "predicted": 1.162 },
+      { "time": "17:00", "actualPrice": 1.150, "predicted": null }
+    ]
+  }
+]

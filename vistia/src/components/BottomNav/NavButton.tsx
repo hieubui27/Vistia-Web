@@ -14,7 +14,10 @@ interface NavButtonProps {
 
 export const NavButton = ({ item, pathname }: NavButtonProps) => {
   const router = useRouter()
-  const isActive = pathname === item.path
+  const isActive =
+    item.path === "/"
+      ? pathname === item.path
+      : pathname.startsWith(item.path)
 
   return (
     <button
