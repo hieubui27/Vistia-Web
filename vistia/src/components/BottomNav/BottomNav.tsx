@@ -21,8 +21,11 @@ export const BottomNav = () => {
     requestAnimationFrame(() => {
       setSpinning(true)
     })
-    router.refresh()
+    router.push("/swap")
+
   }
+
+  
 
   return (
     <div className="fixed bottom-[-8pt] left-1/2 z-50 -translate-x-1/2">
