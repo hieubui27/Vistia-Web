@@ -1,5 +1,5 @@
 
-import type { Metadata,Viewport } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Space_Mono } from "next/font/google";
 
 import "./globals.css";
@@ -16,10 +16,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const spaceMono = Space_Mono({ 
+const spaceMono = Space_Mono({
   variable: "--font-space-mono",
-  subsets: ["latin"], 
-  weight: ["400", "700"] 
+  subsets: ["latin"],
+  weight: ["400", "700"]
 });
 
 export const metadata: Metadata = {
@@ -39,19 +39,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-    <body className={`${geistSans.variable} ${geistMono.variable} ${spaceMono.variable} antialiased`}>
-      {/* Main Container */}
-      <div className="min-h-screen flex flex-col bg-[#0a0a0a] text-white">
-        {/* Dynamic Header */}
-        <DynamicHeader />
-        {/* Content Area */}
-        <div className="flex-1 overflow-y-auto relative">
-          {children}
+      <body className={`${geistSans.variable} ${geistMono.variable} ${spaceMono.variable} antialiased`}>
+        {/* Main Container */}
+        <div className="min-h-screen flex flex-col bg-[#0a0a0a] text-white">
+          {/* Dynamic Header */}
+          <DynamicHeader />
+          {/* Content Area */}
+          <div className="flex-1 overflow-y-auto relative pb-[74px]">
+            {children}
+          </div>
+
+          {/* Bottom Navigation */}
+          <BottomNav />
         </div>
-        {/* Bottom Navigation */}
-        <BottomNav />
-      </div>
-    </body>
-  </html>
+      </body>
+    </html>
   );
 }

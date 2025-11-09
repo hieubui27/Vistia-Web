@@ -6,7 +6,7 @@ import ChartComponent from "./ChartComponent";
 
 const SwapComponent = () => {
     return (
-        <div className="body bg-[#06001C] min-h-screen p-4 pt-0">
+        <div className="body bg-[#06001C] min-h-screen max-h-screen overflow-y-auto p-4 pt-0 ">
             <div className="header flex justify-between items-center pt-[20px]">
                 <div className="logo">
                     <Image
