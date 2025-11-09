@@ -21,7 +21,7 @@ const ChartComponent = () => {
     }
     return (
         <>
-            <div className="bg-[#191F33] p-4 rounded-[8px]">
+            <div className="bg-[#191F33] p-2 rounded-[8px]">
                 <ConfigProvider
                     theme={{
                         algorithm: theme.darkAlgorithm,
@@ -35,20 +35,19 @@ const ChartComponent = () => {
                     <Select
                         value={selectedChartKey}
                         variant="borderless"
-                        className="bg-[#000] rounded-lg"
+                        className="bg-black rounded-[5px] h-[28px]! w-[80px]"
                         onChange={handleChange}
                         options={[
-                            { value: 'rsi', label: <span className="text-[#9EB3FF]! text-[12px] font-bold!">RSI</span> },
-                            { value: 'psar', label: <span className="text-[#9EB3FF]! text-[12px] font-bold!">PSAR</span> },
-                            { value: 'adx', label: <span className="text-[#9EB3FF]! text-[12px] font-bold!">ADX</span> },
+                            { value: 'rsi', label: <span className="text-[#9EB3FF]! text-[14px] font-bold!">RSI</span> },
+                            { value: 'psar', label: <span className="text-[#9EB3FF]! text-[14px] font-bold!">PSAR</span> },
+                            { value: 'adx', label: <span className="text-[#9EB3FF]! text-[14px] font-bold!">ADX</span> },
                         ]}
                     />
                 </ConfigProvider>
-                <div className="mt-4">
+                <div className="mt-2">
                     {data && <LineChart
                         data={data}
                         strokeColor="#426BFF"
-                        fillColor="#0A0F2C"
                     />}
                 </div>
                 
