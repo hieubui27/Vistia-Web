@@ -23,7 +23,7 @@ const BaseLineChart = ({ option, className }: BaseLineChartProps) => {
   return (
     <div
       ref={chartRef}
-      className={className || 'w-full h-full'} // Class mặc định
+      className={className || 'w-full h-full'}
     />
   );
 };
