@@ -17,7 +17,9 @@ export default function DynamicHeader() {
   } else if (pathname === '/chatbot') {
     HeaderComponent = ChatbotHeader
     useWrapper = false
-  } else if (pathname === '/') {
+  } else if (pathname === '/analysis/heatmap') {
+  }
+  else if (pathname === '/') {
     HeaderComponent = HomeHeader
   }
 

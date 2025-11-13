@@ -23,12 +23,13 @@ const DropdownMenu = ({ label, options, value, onChange, className }: DropdownMe
   }, [])
 
   return (
-    <div ref={ref} className={`relative w-full ${className || ""}`}>
+    <div ref={ref} className={`relative  ${className || "w-full"}`}>
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex justify-between items-center bg-[#0E0E0E] border border-[#353535] rounded-sm px-4 py-1 text-[12px] mb-2"
+        className="w-full flex justify-between items-center bg-[#0E0E0E] border border-[#353535] rounded-sm px-1 py-1 text-[12px] mb-2 "
       >
-        <span className="text-white truncate">{value || label}</span>
+        <div className="w-1 flex-shrink-0" />
+        <span className="text-white truncate text-center">{value || label}</span>
         <ChevronDown size={16} className="text-white flex-shrink-0" />
       </button>
 
