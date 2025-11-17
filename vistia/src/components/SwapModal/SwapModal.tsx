@@ -44,12 +44,8 @@ const SwapModal = ({ isOpen, onClose, onConfirm }:SwapModalProps) => {
                 `}
             </style>
 
-            <div
-                className="relative z-10 w-full min-w-full h-160
-                    bg-[url('/Vector142.svg')] bg-contain bg-no-repeat bg-center
-                    rounded-t-[28px] p-8 animate-slide-up flex flex-col mt overflow-hidden"
-            >
-                <div className="absolute inset-0 bg-black/90 pointer-events-none clip-path-custom"></div>
+            <div className="relative z-10 w-full min-w-full h-160 p-8 animate-slide-up flex flex-col mt overflow-hidden">
+                <div className="absolute left-0 top-0 h-full w-full bg-black/90 pointer-events-none clip-path-custom"></div>
 
                 <div className="content relative z-10">
                     <h2 className="text-[20px] font-bold text-[#426BFF] mb-6 text-center uppercase tracking-[1.5px]">
