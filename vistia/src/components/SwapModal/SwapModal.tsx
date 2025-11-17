@@ -1,19 +1,25 @@
 import Image from "next/image";
-import React from "react";
 
-const SwapModal = ({ isOpen, onClose, onConfirm }) => {
+interface SwapModalProps {
+    isOpen: boolean;
+    onClose: () => void;
+    onConfirm: () => void;
+}
+
+const SwapModal = ({ isOpen, onClose, onConfirm }:SwapModalProps) => {
     if (!isOpen) return null;
 
-    const renderRow = (label, value, color = "text-white") => (
+    const renderRow = (label: string, value: string, color: string = "text-white") => (
         <div className="flex justify-between items-center px-4 py-5 bg-[#000000] backdrop-blur-md border border-[#353535] rounded-xl mb-4">
             <span className="text-[#426BFF] text-[12px] font-bold">{label}</span>
-            <span className={`${color} font-semibold text-[12px] font-bold`}>{value}</span>
+            <span className={`${color} text-[12px] font-bold`}>{value}</span>
         </div>
     );
 
+
     return (
         <div
-            className="fixed inset-0 z-[9999] flex items-end justify-center bg-transparent"
+            className="fixed inset-0 z-999 flex items-end justify-center bg-transparent"
             onClick={onClose}
         >
             <style>

@@ -45,7 +45,7 @@ export const BottomNav = () => {
         onConfirm={handleConfirmNavigation}
       />
     <div className="fixed bottom-[-8pt] left-1/2 z-50 -translate-x-1/2">
-      <div className="relative flex w-[380px] h-[84px] items-center justify-between rounded-[15px] bg-[#0E0E0E] border border-[#565656] border-2 shadow-md px-6">
+      <div className="relative flex w-[380px] h-[84px] items-center justify-between rounded-[15px] bg-[#0E0E0E] border-[#565656] border-2 shadow-md px-6">
         {/* left group */}
         <div className="flex gap-6">
           {navItems.slice(0, 2).map((item, index) => (
@@ -56,7 +56,7 @@ export const BottomNav = () => {
         {/* middle reload button */}
         <button
           onClick={handleReload}
-          className="absolute -top-3 left-1/2 flex h-[69px] w-[69px] -translate-x-1/2 items-center justify-center rounded-full bg-[#000000] border border-[#426BFF] border-3"
+          className="absolute -top-3 left-1/2 flex h-[69px] w-[69px] -translate-x-1/2 items-center justify-center rounded-full bg-[#000000] border-[#426BFF] border-3"
         >
           <Image
             src="/button/reload_icon.svg"
