@@ -3,10 +3,27 @@ import { useState, useMemo } from 'react'
 import Image from 'next/image'
 import { useCoin } from '@/src/app/context/HeatmapCoinContext' 
 import MOCK_DATA from '@/public/mock/heatmap_data'
+import SwapModal from '../SwapModal/SwapModal'
+import { useRouter } from 'next/navigation'
 
+interface CoinRsiData {
+  id: string;
+  name: string;
+  image: string;
+  rsi_prev: number;
+  rsi_now: number;
+
+  uniqueId: string;
+  rsi: number;
+
+  dateStr: string;
+  timeStr: string;
+}
 export default function TopRsiWidget() {
   const [activeTab, setActiveTab] = useState<'OVERSOLD' | 'OVERBOUGHT'>('OVERSOLD')
   const { setSelectedCoin } = useCoin()
+  const [showModal, setShowModal] = useState(false)
+  const router = useRouter()
 
   const displayData = useMemo(() => {
     const data = [...MOCK_DATA]
@@ -29,9 +46,25 @@ export default function TopRsiWidget() {
       rsiColor: 'text-[#FF454B]'
     }
   }
+  const clickHandle = (clickedItem:CoinRsiData) =>{
+    setSelectedCoin(clickedItem)
+    setShowModal(true)
+    
+  }
+
+  const handleConfirmNavigation = () => {
+    setShowModal(false)
+    router.push('/swap')
+  }
 
   return (
     <div className=" bg-[#0E0E0E] border border-[#353535] rounded-3xl p-6 font-sans mb-10 m-4">
+       <SwapModal
+        isOpen={showModal}
+        onClose={() => setShowModal(false)}
+        onConfirm={handleConfirmNavigation}
+        signal={activeTab}
+      />
       <div className="flex justify-between items-center mb-8 relative">
         <div 
           onClick={() => setActiveTab('OVERSOLD')}
@@ -57,7 +90,7 @@ export default function TopRsiWidget() {
         {displayData.map((item) => (
           <div 
             key={item.uniqueId}
-            onClick={() => setSelectedCoin(item)}
+            onClick={()=> clickHandle(item)}
             className="flex items-center justify-between group cursor-pointer"
           >
             <div className="flex items-center gap-4">

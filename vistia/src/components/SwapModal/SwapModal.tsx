@@ -4,9 +4,10 @@ interface SwapModalProps {
     isOpen: boolean;
     onClose: () => void;
     onConfirm: () => void;
+    signal: "OVERSOLD" | "OVERBOUGHT";
 }
 
-const SwapModal = ({ isOpen, onClose, onConfirm }:SwapModalProps) => {
+const SwapModal = ({ isOpen, onClose, onConfirm, signal }: SwapModalProps) => {
     if (!isOpen) return null;
 
     const renderRow = (label: string, value: string, color: string = "text-white") => (
@@ -16,6 +17,11 @@ const SwapModal = ({ isOpen, onClose, onConfirm }:SwapModalProps) => {
         </div>
     );
 
+    // Signal theme dynamic
+    const SIGNAL_TEXT = signal === "OVERBOUGHT" ? "Over Bought" : "Over Sold";
+    const SIGNAL_COLOR = signal === "OVERBOUGHT" ? "text-[#EF4147]" : "text-[#00FFAE]";
+
+    const TITLE_COLOR = signal === "OVERBOUGHT" ? "text-[#EF4147]" : "text-[#00FFAE]";
 
     return (
         <div
@@ -44,18 +50,18 @@ const SwapModal = ({ isOpen, onClose, onConfirm }:SwapModalProps) => {
                 `}
             </style>
 
-            <div className="relative z-10 w-full min-w-full h-160 p-8 animate-slide-up flex flex-col mt overflow-hidden">
+            <div className="relative z-10 w-full min-w-full h-160 p-8 animate-slide-up flex flex-col overflow-hidden">
                 <div className="absolute left-0 top-0 h-full w-full bg-black/90 pointer-events-none clip-path-custom"></div>
 
                 <div className="content relative z-10">
-                    <h2 className="text-[20px] font-bold text-[#426BFF] mb-6 text-center uppercase tracking-[1.5px]">
+                    <h2 className={`text-[20px] font-bold mb-6 text-center uppercase tracking-[1.5px] ${TITLE_COLOR}`}>
                         Trading Strategy
                     </h2>
 
                     <div className="text-sm mb-6">
                         <div className="flex items-center gap-1 mb-2">
                             <span className="text-[#FFFFFF] font-bold">Signal:</span>
-                            <span className="text-[#EF4147] font-medium">Over Bought</span>
+                            <span className={`${SIGNAL_COLOR} font-medium`}>{SIGNAL_TEXT}</span>
                         </div>
                         <div className="flex items-center gap-1">
                             <span className="text-[#FFFFFF]">Indicator:</span>
@@ -90,4 +96,3 @@ const SwapModal = ({ isOpen, onClose, onConfirm }:SwapModalProps) => {
 };
 
 export default SwapModal;
-

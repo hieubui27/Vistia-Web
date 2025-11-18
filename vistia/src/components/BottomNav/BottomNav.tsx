@@ -3,13 +3,12 @@ import { usePathname, useRouter } from "next/navigation"
 import { NavButton } from "./NavButton"
 import Image from "next/image"
 import { useState } from "react"
-import SwapModal from "../SwapModal/SwapModal"
 
 export const BottomNav = () => {
   const pathname = usePathname()
   const router = useRouter()
   const [spinning, setSpinning] = useState(false)
-  const [showModal, setShowModal] = useState(false);
+  
 
   const navItems = [
     { label: "Home", iconWhite: "/button/home_icon_white.svg", iconBlue: "/button/home_icon_blue2.svg", path: "/" },
@@ -23,27 +22,14 @@ export const BottomNav = () => {
     requestAnimationFrame(() => {
       setSpinning(true)
     })
-    if(pathname.startsWith("/analysis/heatmap")){
-        setShowModal(true)
-    }else{
       router.push("/swap")
-    }
-    
-
   }
-  const handleConfirmNavigation = () => {
-    setShowModal(false);
-    router.push("/swap");
-  };
+  
   
 
   return (
     <>
-    <SwapModal 
-        isOpen={showModal}                    
-        onClose={() => setShowModal(false)}  
-        onConfirm={handleConfirmNavigation}
-      />
+    
     <div className="fixed bottom-[-8pt] left-1/2 z-50 -translate-x-1/2">
       <div className="relative flex w-[380px] h-[84px] items-center justify-between rounded-[15px] bg-[#0E0E0E] border-[#565656] border-2 shadow-md px-6">
         {/* left group */}

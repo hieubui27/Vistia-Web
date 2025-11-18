@@ -25,6 +25,8 @@ export default function Heatmap() {
   const [chartWidth, setChartWidth] = useState(0)
   const [rsiIndicator, setRsiIndicator] = useState("RSI7")
   const [intervalIndicator, setIntervalIndicator] = useState("30M")
+  const [highlightCoinId, setHighlightCoinId] = useState<string | null>(null);
+
 
   const { selectedCoin, setSelectedCoin } = useCoin()
 
@@ -118,8 +120,7 @@ export default function Heatmap() {
               const newY = height - coin.rsi_now * scaleY - coinSize / 2
               const isUp = coin.rsi_now > coin.rsi_prev
               const isDown = coin.rsi_now < coin.rsi_prev
-
-              const isSelected = selectedCoin?.id === coin.id
+              const isSelected = highlightCoinId === coin.id;
               const dimOthers = selectedCoin !== null && !isSelected
 
               return (
@@ -143,12 +144,19 @@ export default function Heatmap() {
                   {/* COIN */}
                   <div
                     onClick={() => {
-                      if (selectedCoin?.id === coin.id) {
-                        setSelectedCoin(null)
+                      if (highlightCoinId === coin.id) {
+                          // Click lần 2 → chỉ xoá highlight UI
+                          setHighlightCoinId(null);
+                          // Không setSelectedCoin(null)
                       } else {
-                        setSelectedCoin(coin)
+                          // Lưu highlight UI
+                          setHighlightCoinId(coin.id);
+                  
+                          // Lưu coin vào context (để modal, swap page,... dùng)
+                          setSelectedCoin(coin);
                       }
-                    }}
+                  }}
+                  
                     style={{
                       position: "absolute", left: x, top: newY, width: coinSize, height: coinSize, transition: "top 0.5s ease, opacity 0.3s",
                       opacity: dimOthers ? 0.25 : 1,
