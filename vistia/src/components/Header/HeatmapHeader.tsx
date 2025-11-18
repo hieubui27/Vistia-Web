@@ -12,7 +12,7 @@ function HeatmapHeader() {
     const statusColor = isUp ? "text-[#01B792]" : "text-[#FF454B]";
     const arrowIcon = isUp ? "▲" : "▼";
     return (
-        <div className="container relative w-full h-full bg-[url(/images/AIPredict/image.png)] bg-no-repeat bg-cover bg-center pt-4">
+        <div className="container relative w-full h-full bg-[url(/images/AIPredict/image.png)] bg-no-repeat bg-cover bg-center pt-4 pb-10">
              <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 w-11/12 max-w-[600px] h-auto min-h-[140px] bg-[url(/heatmap/Vector118.png)] bg-no-repeat bg-contain bg-center z-20"></div>
             <div className="content flex justify-between items-center p-6 relative z-10 mt-2 mx-auto w-11/12 max-w-[600px] h-auto min-h-[140px] bg-[url(/heatmap/Vector119.png)] bg-no-repeat bg-contain bg-center">
             
@@ -45,13 +45,11 @@ function HeatmapHeader() {
                         className="rounded-full object-cover"
                     />
                 </div>
-
-
-
+                <span className="text-white text-[11px] absolute bottom-4 right-5">
+                    Trading Pair
+                </span>
             </div>
-            <span className="text-white text-[11px] absolute bottom-8 right-10">
-                Trading Pair
-            </span>
+            
 
         </div>
     )
