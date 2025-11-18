@@ -4,6 +4,7 @@ import HomeHeader from "./HomeHeader"
 import AIHomeHeader from "./AIHomeHeader"
 import AIDetailHeader from "./AIDetailHeader"
 import ChatbotHeader from "./ChatbotHeader"
+import HeatmapHeader from "./HeatmapHeader"
 
 export default function DynamicHeader() {
   const pathname = usePathname()
@@ -17,10 +18,12 @@ export default function DynamicHeader() {
   } else if (pathname === '/chatbot') {
     HeaderComponent = ChatbotHeader
     useWrapper = false
-  } else if (pathname === '/analysis/heatmap') {
   }
   else if (pathname === '/') {
     HeaderComponent = HomeHeader
+  }
+  else if(pathname.startsWith('/analysis/heatmap')){
+    HeaderComponent=HeatmapHeader
   }
 
   if (!HeaderComponent) return null

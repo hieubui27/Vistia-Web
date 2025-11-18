@@ -25,7 +25,7 @@ export default function AnalysisPage() {
           onClick={() => setSelectedCard("cex")}
           className={`mb-8 mr-1 cursor-pointer transition-all duration-300 
             ${selectedCard === "cex"
-              ? "!bg-[#000B32] !border-[#426BFF] !text-white shadow-[0_0_10px_rgba(0,255,255,0.3)] "
+              ? "bg-[#000B32]! border-[#426BFF]! text-white! shadow-[0_0_10px_rgba(0,255,255,0.3)] "
               : ""}
           `}
         >
@@ -44,7 +44,7 @@ export default function AnalysisPage() {
           onClick={() => setSelectedCard("dex")}
           className={`mb-8 ml-1 cursor-pointer transition-all duration-300 
             ${selectedCard === "dex"
-              ? "!bg-[#000B32] !border-[#426BFF] !text-white shadow-[0_0_10px_rgba(0,255,255,0.3)]"
+              ? "bg-[#000B32]! border-[#426BFF]! text-white! shadow-[0_0_10px_rgba(0,255,255,0.3)]"
               : ""}
           `}
         >

@@ -106,7 +106,7 @@ const SwapBox = () => {
                     label: (
                       <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
                         <Image src={token.logoURI} alt={token.name} width={20} height={20} style={{ borderRadius: "50%" }} preview={false} />
-                        <span className="font-bold text-[12px] text-[#fff]">{token.symbol}</span>
+                        <span className="font-bold text-[12px] text-white">{token.symbol}</span>
                       </div>
                     ),
                   }))
@@ -120,7 +120,7 @@ const SwapBox = () => {
           </div>
         </div>
         <div className="swap mt-20">
-          <button className="w-full bg-[#426BFF] pt-2 pb-2 rounded-[8px] text-[20px] text-[#000] font-bold">
+          <button className="w-full bg-[#426BFF] pt-2 pb-2 rounded-[8px] text-[20px] text-black font-bold">
             Swap
           </button>
         </div>

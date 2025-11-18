@@ -5,6 +5,7 @@ import { Geist, Geist_Mono, Space_Mono } from "next/font/google";
 import "./globals.css";
 import DynamicHeader from "../components/Header/DynamicHeader";
 import BottomNav from "../components/BottomNav/BottomNav";
+import { CoinProvider } from "./context/HeatmapCoinContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -38,7 +39,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <CoinProvider>
+      <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} ${spaceMono.variable} antialiased`}>
         {/* Main Container */}
         <div className="min-h-screen flex flex-col bg-[#0a0a0a] text-white">
@@ -54,5 +56,7 @@ export default function RootLayout({
         </div>
       </body>
     </html>
+    </CoinProvider>
+    
   );
 }
