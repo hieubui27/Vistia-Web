@@ -23,7 +23,7 @@ export const BottomNav = () => {
     requestAnimationFrame(() => {
       setSpinning(true)
     })
-    if(pathname.startsWith("/heatmap")){
+    if(pathname.startsWith("/analysis/heatmap")){
         setShowModal(true)
     }else{
       router.push("/swap")
