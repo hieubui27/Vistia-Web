@@ -22,7 +22,7 @@ export default function DynamicHeader() {
   else if (pathname === '/') {
     HeaderComponent = HomeHeader
   }
-  else if(pathname.startsWith('/analysis/heatmap')){
+  else if(pathname.startsWith('/analysis/heatmap') || pathname==='/analysis/rsi'){
     HeaderComponent=HeatmapHeader
   }
 

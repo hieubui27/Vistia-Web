@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import DropdownMenu from '../../Common/DropdownMenu'
+import { useCoin } from '@/src/app/context/HeatmapCoinContext'
 
 interface CoinData {
   id: string
@@ -35,7 +36,7 @@ export default function RsiChart() {
   const [chartWidth, setChartWidth] = useState(0)
   const [rsiIndicator, setRsiIndicator] = useState("RSI7")
   const [intervalIndicator, setIntervalIndicator] = useState("30M")
-
+  const { selectedCoin, setSelectedCoin } = useCoin()
   const chartRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -48,7 +49,17 @@ export default function RsiChart() {
     }
     fetchCoins()
   }, [])
-
+  useEffect(() => {
+    if (coins.length === 0) return;
+    if (selectedCoin) return;
+  
+    const btc = coins.find(c =>
+      c.name?.toLowerCase() === "bitcoin" ||
+      c.id?.toLowerCase() === "bitcoin"
+    );
+  
+    if (btc) setSelectedCoin(btc);
+  }, [coins]);
   useEffect(() => {
     if (!chartRef.current) return
 
