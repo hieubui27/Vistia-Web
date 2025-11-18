@@ -1,6 +1,5 @@
 'use client'
 import { useState } from "react"
-import { BarChart2, Activity, LineChart, Radar } from "lucide-react"
 import Image from "next/image"
 import Card from "../../components/Common/Card"
 import DropdownMenu from "../../components/Common/DropdownMenu"
@@ -74,7 +73,7 @@ export default function AnalysisPage() {
 
           <Card>
             <div className="grid grid-cols-4 place-items-center py-3">
-              <IconButton label="Heatmap" iconSrc="/analysis/heatmap-icon.svg" path="/heatmap"/>
+              <IconButton label="Heatmap" iconSrc="/analysis/heatmap-icon.svg" path="analysis/heatmap"/>
               <IconButton label="JP Candlestick" iconSrc="/analysis/candlestick-icon.svg" path="/candlestick"/>
               <IconButton label="PSAR" iconSrc="/analysis/psar-icon.svg" path="/psar"/>
               <IconButton label="ADX" iconSrc="/analysis/adx-icon.svg" path="/adx"/>
