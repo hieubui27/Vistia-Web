@@ -36,13 +36,13 @@ export default function Heatmap() {
   const [rsiIndicator, setRsiIndicator] = useState("RSI7")
   const [intervalIndicator, setIntervalIndicator] = useState("30M")
 
+  const [selectedCoin, setSelectedCoin] = useState<string | null>(null)
+
   const chartRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const fetchCoins = async () => {
-      const res = await fetch(
-        '/mock/heatmap_data.json'
-      )
+      const res = await fetch('/mock/heatmap_data.json')
       const data = await res.json()
       setCoins(data)
     }
@@ -64,15 +64,20 @@ export default function Heatmap() {
 
   const scaleY = height / 100
   const divisions = 10
-
   const coinSize = 20
+
+  const averageRSI =
+    coins.length > 0
+      ? coins.reduce((sum, c) => sum + c.rsi_now, 0) / coins.length
+      : 0;
+
+  const avgY = height - averageRSI * scaleY;
 
   return (
     <div className=" my-4 pr-4">
+
       <div className="flex items-center relative pl-2 pb-4 text-white text-[11px]">
-        <span className="absolute tracking-wider">
-          Select analysis indicators
-        </span>
+        <span className="absolute tracking-wider">Select analysis indicators</span>
         <div className="flex items-center pt-2 gap-2 ml-auto">
           <DropdownMenu
             label=""
@@ -91,7 +96,9 @@ export default function Heatmap() {
         </div>
       </div>
 
+
       <div className="flex w-full">
+
         <div className="relative w-[40px]" style={{ height }}>
           {Array.from({ length: divisions + 1 }, (_, i) => i * 10).map(rsi => (
             <div
@@ -109,10 +116,12 @@ export default function Heatmap() {
           ))}
         </div>
 
+
         <div
           ref={chartRef}
           className="relative w-full h-[430px] overflow-visible bg-[url('/heatmap/layer.svg'),url('/chatbot/bg-star.png')]"
         >
+
           {Array.from({ length: divisions + 1 }, (_, i) => i * 10).map(rsi => (
             <div
               key={rsi}
@@ -142,6 +151,33 @@ export default function Heatmap() {
             />
           ))}
 
+          {height > 0 && (
+            <>
+              <div
+                style={{
+                  position: "absolute",
+                  top: avgY,
+                  width: "100%",
+                  height: "2px",
+                  background: "rgba(0, 145, 255, 0.7)",
+                }}
+              />
+
+              <div
+                style={{
+                  position: "absolute",
+                  top: avgY - 16,
+                  right: 10,
+                  color: "rgba(0, 145, 255, 0.7)",
+                  fontSize: "9px",
+                  fontWeight: "bold",
+                }}
+              >
+                Avr: {averageRSI.toFixed(2)}
+              </div>
+            </>
+          )}
+
           {height > 0 &&
             coins.map((coin, i) => {
               const spacing = chartWidth / (coins.length + 1)
@@ -153,9 +189,13 @@ export default function Heatmap() {
               const isUp = coin.rsi_now > coin.rsi_prev
               const isDown = coin.rsi_now < coin.rsi_prev
 
+              const isSelected = selectedCoin === coin.id
+              const dimOthers = selectedCoin !== null && !isSelected
+
               return (
                 <div key={coin.id}>
-                  {(isUp || isDown) && (
+
+                  {isSelected && (isUp || isDown) && (
                     (() => {
                       const upColorStart = "rgba(0, 255, 102, 1)";
                       const upColorEnd = "rgba(0, 255, 102, 0)";
@@ -184,20 +224,77 @@ export default function Heatmap() {
                     })()
                   )}
 
+                  {isSelected && (
+                    <>
+                      <div
+                        style={{
+                          position: "absolute",
+                          left: x + coinSize / 2 - 10,
+                          top: height - 10 * scaleY - 10,
+                          width: 30,
+                          height: 30,
+                          filter: "drop-shadow(0 0 6px rgba(255,255,255,0.8))",
+                          pointerEvents: "none", 
+                        }}
+                      >
+                        <Image
+                          
+                          src="/heatmap/green-icon.svg"
+                          alt="green-icon"
+                          width={30}
+                          height={30}
+                        />
+                      </div>
+
+                      <div
+                        style={{
+                          position: "absolute",
+                          left: x + coinSize / 2 - 10,
+                          top: height - 90 * scaleY - 10,
+                          width: 30,
+                          height: 30,
+                          filter: "drop-shadow(0 0 6px rgba(255,255,255,0.8))",
+                          pointerEvents: "none",
+                        }}
+                      >
+                        <Image
+                          src="/heatmap/red-icon.svg"
+                          alt="red-icon"
+                          width={30}
+                          height={30}
+                        />
+                      </div>
+                    </>
+                  )}
+
+                  {/* COIN */}
                   <div
+                    onClick={() => {
+                      if (selectedCoin === coin.id) {
+                        setSelectedCoin(null)
+                      } else {
+                        setSelectedCoin(coin.id)
+                      }
+                    }}
+
                     style={{
                       position: "absolute",
                       left: x,
                       top: newY,
                       width: coinSize,
                       height: coinSize,
-                      transition: "top 0.5s ease",
-                      boxShadow: isUp
-                        ? "0 0 14px rgba(0,255,100, 0.9)"
-                        : isDown
-                          ? "0 0 14px rgba(255,40,40,0.9)"
-                          : "0 0 8px rgba(255,255,255,0.9)",
+                      transition: "top 0.5s ease, opacity 0.3s",
+                      opacity: dimOthers ? 0.25 : 1,
+                      boxShadow:
+                        isSelected
+                          ? isUp
+                            ? "0 0 20px rgba(0,255,100,1)"
+                            : isDown
+                              ? "0 0 20px rgba(255,40,40,1)"
+                              : "0 0 18px white"
+                          : "0 0 18px white",
                       borderRadius: "50%",
+                      cursor: "pointer",
                     }}
                   >
                     <Image

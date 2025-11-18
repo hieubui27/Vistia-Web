@@ -1,5 +1,5 @@
 import React from 'react'
-import Heatmap from '../../../components/Charts/Heatmap/Heatmap'
+import Heatmap from '../../../components/Charts/AnalysisCharts/Heatmap'
 
 export default function HeatmapPage() {
   return (
