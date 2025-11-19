@@ -24,9 +24,6 @@ export const BottomNav = () => {
     })
       router.push("/swap")
   }
-  
-  
-
   return (
     <>
     

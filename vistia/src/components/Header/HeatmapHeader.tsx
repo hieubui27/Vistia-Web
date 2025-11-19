@@ -49,8 +49,6 @@ function HeatmapHeader() {
                     Trading Pair
                 </span>
             </div>
-            
-
         </div>
     )
 }
