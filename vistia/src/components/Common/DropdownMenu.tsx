@@ -26,15 +26,15 @@ const DropdownMenu = ({ label, options, value, onChange, className }: DropdownMe
     <div ref={ref} className={`relative  ${className || "w-full"}`}>
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex justify-between items-center bg-[#0E0E0E] border border-[#353535] rounded-sm px-1 py-1 text-[12px] mb-2 "
+        className="w-full flex justify-between items-center bg-[#0E0E0E] border border-[#353535] rounded-sm px-1 py-1 text-[12px]"
       >
-        <div className="w-1 flex-shrink-0" />
+        <div className="w-1 shrink-0" />
         <span className="text-white truncate text-center">{value || label}</span>
-        <ChevronDown size={16} className="text-white flex-shrink-0" />
+        <ChevronDown size={16} className="text-white shrink-0" />
       </button>
 
       {open && (
-        <div className="absolute top-full left-0 mt-2 w-full bg-[#1E1E3A] border border-gray-700 rounded-xl shadow-lg z-50">
+        <div className="absolute top-full left-0 w-full bg-[#1E1E3A] border border-gray-700 rounded-b-xl shadow-lg z-50">
           {options.map((opt) => (
             <div
               key={opt}
@@ -42,7 +42,7 @@ const DropdownMenu = ({ label, options, value, onChange, className }: DropdownMe
                 onChange(opt)
                 setOpen(false)
               }}
-              className={`px-4 py-2 text-[12px] cursor-pointer hover:bg-[#2A2A50] ${
+              className={`px-4 py-2 text-[12px] cursor-pointer hover:bg-[#2A2A50] first:rounded-t-xl last:rounded-b-xl ${
                 value === opt ? "text-[#426BFF]" : "text-gray-300"
               }`}
             >

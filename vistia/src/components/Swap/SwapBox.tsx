@@ -19,6 +19,9 @@ const TO_DEFAULT_TOKEN_ADDRESS = "0xc2132d05d31c914a87c6611c10748aeb04b58e8f";
 const SwapBox = () => {
   const [fromTokenAddress, setFromTokenAddress] = useState<string>(FROM_DEFAULT_TOKEN_ADDRESS);
   const [toTokenAddress, setToTokenAddress] = useState<string>(TO_DEFAULT_TOKEN_ADDRESS);
+  
+  const [fromAmount, setFromAmount] = useState<string>("1.5");
+  const [toAmount, setToAmount] = useState<string>("1.5");
 
   const handleFromChange = (value: string) => {
     setFromTokenAddress(value);
@@ -32,6 +35,10 @@ const SwapBox = () => {
     const tempAddress = fromTokenAddress;
     setFromTokenAddress(toTokenAddress);
     setToTokenAddress(tempAddress);
+
+    const tempAmount = fromAmount;
+    setFromAmount(toAmount);
+    setToAmount(tempAmount);
   };
 
   return (
@@ -40,6 +47,7 @@ const SwapBox = () => {
         Choose network
       </button>
       <div className="main p-4 border border-[#426BFF] rounded-[8px] mt-[10px] shadow-[0_0_12px_2px_rgba(66,107,255,0.6)]">
+        
         <div className="from border border-[#2946AB] rounded-[8px] overflow-hidden">
           <div className="top text-[#9EB3FF] flex justify-between items-center bg-[#161616] p-2">
             <h3 className="text-[12px] font-bold">From</h3>
@@ -70,9 +78,17 @@ const SwapBox = () => {
                 }
               />
             </div>
-            <div className="amount flex flex-col items-end text-[#9EB3FF]">
-              <p className="text-[14px] font-bold">1.5</p>
-              <p className="text-[10px] font-bold">$142.125,7</p>
+            <div className="amount flex flex-col items-end text-[#9EB3FF] w-1/2">
+              <input 
+                type="number" 
+                placeholder="0.0"
+                className="bg-transparent text-right text-[14px] font-bold text-[#9EB3FF] outline-none w-full placeholder-[#3a3a3a]"
+                value={fromAmount}
+                onChange={(e) => setFromAmount(e.target.value)}
+              />
+              <p className="text-[10px] font-bold text-gray-500">
+                {fromAmount ? `$${(parseFloat(fromAmount || "0") * 142).toFixed(2)}` : "$0.00"}
+              </p>
             </div>
           </div>
         </div>
@@ -113,12 +129,21 @@ const SwapBox = () => {
                 }
               />
             </div>
-            <div className="amount flex flex-col items-end text-[#9EB3FF]">
-              <p className="text-[14px] font-bold">1.5</p>
-              <p className="text-[10px] font-bold">$142.125,7</p>
+            <div className="amount flex flex-col items-end text-[#9EB3FF] w-1/2">
+              <input 
+                type="number" 
+                placeholder="0.0"
+                className="bg-transparent text-right text-[14px] font-bold text-[#9EB3FF] outline-none w-full placeholder-[#3a3a3a]"
+                value={toAmount}
+                onChange={(e) => setToAmount(e.target.value)}
+              />
+               <p className="text-[10px] font-bold text-gray-500">
+                {toAmount ? `$${(parseFloat(toAmount || "0") * 142).toFixed(2)}` : "$0.00"}
+              </p>
             </div>
           </div>
         </div>
+
         <div className="swap mt-20">
           <button className="w-full bg-[#426BFF] pt-2 pb-2 rounded-[8px] text-[20px] text-black font-bold">
             Swap
