@@ -11,7 +11,7 @@ function PSARHeader() {
     const isUp = rsiNow >= rsiPrev;
     const statusColor = isUp ? "text-[#01B792]" : "text-[#FF454B]";
     const arrowIcon = isUp ? "▲" : "▼";
-    const percent = Math.abs(((rsiNow - rsiPrev) / rsiPrev) * 100).toFixed(2); // Giả lập % thay đổi
+    const percent = Math.abs(((rsiNow - rsiPrev) / rsiPrev) * 100).toFixed(2);
 
     return (
         <div className="container relative w-full h-full bg-[url(/images/AIPredict/image.png)] bg-no-repeat bg-cover bg-center pt-4 pb-10">
@@ -24,12 +24,12 @@ function PSARHeader() {
                     </h3>
                     {/* Giả lập giá - Thực tế bạn cần thêm field price vào JSON nếu muốn hiển thị giá thật */}
                     <p className={`${statusColor} text-[18px] font-bold transition-colors duration-300`}>
-                        {selectedCoin ? `$${(rsiNow * 1000).toLocaleString()}` : "Loading..."} 
+                        $98.295,99 
                     </p>
                     <div className="flex items-center gap-2">
                     <span className={`${statusColor} text-[10px]`}>{arrowIcon}</span>
                         <p className={`${statusColor} text-[10px] font-bold transition-colors duration-300`}>
-                            {percent}%
+                            4.34%
                         </p>
                     </div>
                 </div>
