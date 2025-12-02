@@ -5,7 +5,7 @@ import { Geist, Geist_Mono, Space_Mono } from "next/font/google";
 import "./globals.css";
 import DynamicHeader from "../components/Header/DynamicHeader";
 import BottomNav from "../components/BottomNav/BottomNav";
-import { CoinProvider } from "./context/HeatmapCoinContext";
+import { CoinProvider } from "../context/HeatmapCoinContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

@@ -1,7 +1,7 @@
 'use client'
 import { useState, useMemo } from 'react'
 import Image from 'next/image'
-import { useCoin } from '@/src/app/context/HeatmapCoinContext' 
+import { useCoin } from '@/src/context/HeatmapCoinContext' 
 import MOCK_DATA from '@/public/mock/heatmap_data'
 import SwapModal from '../SwapModal/SwapModal'
 import { useRouter } from 'next/navigation'

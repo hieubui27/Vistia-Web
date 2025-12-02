@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import DropdownMenu from '../../Common/DropdownMenu'
-import { CoinData, useCoin } from '@/src/app/context/HeatmapCoinContext';
+import { CoinData, useCoin } from '@/src/context/HeatmapCoinContext';
 
 
 function getRSIColor(rsi: number): string {

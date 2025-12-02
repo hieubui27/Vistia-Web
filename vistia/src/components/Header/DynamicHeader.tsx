@@ -5,6 +5,7 @@ import AIHomeHeader from "./AIHomeHeader"
 import AIDetailHeader from "./AIDetailHeader"
 import ChatbotHeader from "./ChatbotHeader"
 import HeatmapHeader from "./HeatmapHeader"
+import PSARHeader from "./PSARHeader"
 
 export default function DynamicHeader() {
   const pathname = usePathname()
@@ -24,6 +25,9 @@ export default function DynamicHeader() {
   }
   else if(pathname.startsWith('/analysis/heatmap') || pathname==='/analysis/rsi'){
     HeaderComponent=HeatmapHeader
+  }
+  else if(pathname==='/analysis/adx' || pathname==='/analysis/psar'){
+    HeaderComponent=PSARHeader;
   }
 
   if (!HeaderComponent) return null

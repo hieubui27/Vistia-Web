@@ -74,9 +74,9 @@ export default function AnalysisPage() {
           <Card>
             <div className="grid grid-cols-4 place-items-center py-3">
               <IconButton label="Heatmap" iconSrc="/analysis/heatmap-icon.svg" path="analysis/heatmap"/>
-              <IconButton label="JP Candlestick" iconSrc="/analysis/candlestick-icon.svg" path="/candlestick"/>
-              <IconButton label="PSAR" iconSrc="/analysis/psar-icon.svg" path="/psar"/>
-              <IconButton label="ADX" iconSrc="/analysis/adx-icon.svg" path="/adx"/>
+              <IconButton label="JP Candlestick" iconSrc="/analysis/candlestick-icon.svg" path="analysis/candlestick"/>
+              <IconButton label="PSAR" iconSrc="/analysis/psar-icon.svg" path="analysis/psar"/>
+              <IconButton label="ADX" iconSrc="/analysis/adx-icon.svg" path="analysis/adx"/>
             </div>
           </Card >
         </div>

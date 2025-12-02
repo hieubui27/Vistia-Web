@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import DropdownMenu from '../../Common/DropdownMenu'
-import { useCoin } from '@/src/app/context/HeatmapCoinContext'
+import { useCoin } from '@/src/context/HeatmapCoinContext'
 
 interface CoinData {
   id: string
