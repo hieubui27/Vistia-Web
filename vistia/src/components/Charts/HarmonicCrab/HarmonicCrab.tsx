@@ -152,10 +152,10 @@ const HarmonicCrab = ({ data }: { data: PatternResponse }) => {
         ))}
       </div>
       <button
-                              onClick={onConfirm}
-                              className="w-full py-1.5 mt-4 bg-[#426BFF] text-black overflow-hidden font-bold rounded-[5px] text-[16px] flex items-center justify-center border border-[#353535]">
-                              <span className="mr-4">Save</span>
-                          </button>
+        onClick={onConfirm}
+        className="w-full py-1.5 mt-4 bg-[#426BFF] text-black overflow-hidden font-bold rounded-[5px] text-[16px] flex items-center justify-center border border-[#353535]">
+        <span className="mr-4">Save</span>
+      </button>
     </div>
   );
 };

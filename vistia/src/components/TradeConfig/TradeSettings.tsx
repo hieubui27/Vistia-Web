@@ -23,23 +23,23 @@ const TradeSettings = () => {
   ];
 
   return (
-    <div className="w-full max-w-md mx-auto p-1">
-      <div className="bg-black border border-[#2B2B2B] border-[3px] rounded-[30px] p-6 shadow-2xl m-4">
-        
+    <div className="w-full">
+      <div className="bg-black border border-[#2B2B2B] rounded-[30px] p-6 shadow-2xl">
+
         <div className="flex flex-col gap-5 mt-2">
           {fields.map((field) => (
             <div
               key={field.key}
-              className="group flex justify-between items-center px-5 py-4 rounded-xl border border-[2px] border-[#0090FF] bg-black transition-all duration-300 focus-within:shadow-[0_0_10px_rgba(0,144,255,0.7)]"
+              className="group flex justify-between items-center px-5 py-4 rounded-xl border border-[#0090FF] bg-black transition-all duration-300 focus-within:shadow-[0_0_10px_rgba(0,144,255,0.7)]"
             >
-              <label className="text-white font-space-mono text-[14px] font-bold tracking-wide">
+              <label className="text-white font-space-mono text-[8px] font-bold tracking-wide">
                 {field.label}
               </label>
               <input
                 type="text"
                 value={values[field.key as keyof typeof values]}
                 onChange={(e) => handleChange(field.key, e.target.value)}
-                className="bg-transparent text-right text-white font-space-mono text-[14px] font-bold outline-none focus:outline-none w-[120px] placeholder-gray-600"
+                className="bg-transparent text-right text-white font-space-mono text-[8px] font-bold outline-none focus:outline-none w-[120px] placeholder-gray-600"
               />
             </div>
           ))}
