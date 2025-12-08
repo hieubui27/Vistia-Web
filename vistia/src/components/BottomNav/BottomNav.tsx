@@ -11,7 +11,7 @@ export const BottomNav = () => {
   
 
   const navItems = [
-    { label: "Home", iconWhite: "/button/home_icon_white.svg", iconBlue: "/button/home_icon_blue2.svg", path: "/" },
+    { label: "Home", iconWhite: "/button/home_icon_white2.svg", iconBlue: "/button/home_icon_blue3.svg", path: "/" },
     { label: "Analysis", iconWhite: "/button/analysis_icon_white.svg", iconBlue: "/button/analysis_icon_blue.svg", path: "/analysis" },
     { label: "AI", iconWhite: "/button/ai_icon_white.svg", iconBlue: "/button/ai_icon_blue2.svg", path: "/ai" },
     { label: "Chatbot", iconWhite: "/button/chatbot_icon_white.svg", iconBlue: "/button/chatbot_icon_blue3.svg", path: "/chatbot" },

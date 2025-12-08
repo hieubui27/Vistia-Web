@@ -265,7 +265,7 @@ function ADXChart() {
     }), [priceDates, candlestickValues, volumeValues, adxData, limitedPriceData, finalMinVolume, finalMaxVolume, hoveredAdx]); 
 
     return (
-        <div className="p-6 bg-black min-h-screen">
+        <div className="p-6">
             <div className="flex justify-between items-center text-white text-[10px] font-mono pb-2">
                 <div className="flex gap-2 text-[10px]">
                     <span className="">Price: <span className="text-white font-bold">${price}</span></span>
