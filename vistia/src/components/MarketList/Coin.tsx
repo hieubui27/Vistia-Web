@@ -35,7 +35,7 @@ const Coin = ({ name, symbol, image, price, change }: CoinProps) => {
             change >= 0 ? "text-green-400" : "text-red-400"
           }`}
         >
-          {change >= 0 ? "▲" : "▼"} {change.toFixed(2)}%
+          {change >= 0 ? "▲" : "▼"} {change?.toFixed(2)}%
         </p>
       </div>
     </div>
